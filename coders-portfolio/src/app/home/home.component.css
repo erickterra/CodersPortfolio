@@ -13,12 +13,6 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  h3 {
-    text-align: center;
-    font-size: 25px;
-    color: whitesmoke;
-    margin-bottom: 0;
-  }
   h4 {
     position: relative;
   }
@@ -35,7 +29,7 @@
 }
   .col-1-4 {
     width: 25%;
-    height: 250%;
+    height: 25%;
   }
   .col-1-2 {
     width: 50%;
