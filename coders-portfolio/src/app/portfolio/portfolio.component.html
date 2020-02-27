@@ -1,6 +1,12 @@
-<div class="folder">
+<div class="folder half">
     <div class="header">Languages</div>
+    <div class="card" *ngFor = "let lang of langs">
+        <div class="language"><img src= {{lang.iconLocation}}> {{lang.name}}</div>
+    </div>
 </div>
-<div class="folder">
+<div class="folder half">
     <div class="header">Projects</div>
+    <div class="card"></div>
+   
+
 </div>

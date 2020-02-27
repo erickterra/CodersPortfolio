@@ -9,14 +9,25 @@ html {
     color: #eee;
     margin-bottom: 0;
   }
-  .folder
+  *.folder
 {
   text-align: center;
     float: left;
     height: fit-content;
-    width: 25%;
     margin: 10px;
     background-color: #eeeeee18;
+}
+*.folder.quarter
+{
+  width: 23%;
+}
+*.folder.half
+{
+  width: 48%;
+}
+*.folder.full
+{
+  width: 98%;
 }
 .folder .header
 {
@@ -30,7 +41,7 @@ html {
     float: inline-start;
     background-color: #2e0c55;
     color: #eee;
-    padding: 50px;
+    padding: 25px;
     padding-left: 25px;
     font-size: large;
     text-align: left;
@@ -45,4 +56,23 @@ html {
     cursor: pointer;
     background-color: #eee;
     color: #2e0c55;
+}
+
+*.textfield
+{
+  height: fit-content;
+  background-color: #eee;
+  color: black;
+}
+*.textfield.title
+{
+  color: black;
+  font-style: bold;
+  font-size: 20px;
+}
+*.textfield.text
+{
+  color: black;
+  font-style: normal;
+  font-size: 15px;
 }

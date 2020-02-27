@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Language } from '../Language';
+import { LanguageFectherService } from '../language-fecther.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor() { }
+  langs: Language[];
+
+  constructor(private fetcher: LanguageFectherService) { }
 
   ngOnInit(): void {
+    this.langs = this.fetcher.getLanguages();
   }
 
 }
