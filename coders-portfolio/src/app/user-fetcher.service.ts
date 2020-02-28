@@ -8,7 +8,7 @@ import { fakeUsers } from './testUsers';
 export class UserFetcherService {
   getUser(id: number): user
   {
-    return fakeUsers[id];
+    return fakeUsers.find(u => u.id == id);
   }
   constructor() { }
 }

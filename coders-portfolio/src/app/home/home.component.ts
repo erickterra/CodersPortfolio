@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { user } from '../user';
+import { UserFetcherService } from '../user-fetcher.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  activeUser: user;
+
+  constructor(private uFetcher: UserFetcherService) { }
 
   ngOnInit(): void {
+    this.activeUser = this.uFetcher.getUser(1);
   }
 
 }
