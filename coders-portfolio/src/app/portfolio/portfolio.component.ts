@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Language } from '../Language';
 import { LanguageFectherService } from '../language-fecther.service';
+import { UserFetcherService } from '../user-fetcher.service';
+import { user } from '../user';
+import { skill } from '../skills';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-portfolio',
@@ -9,12 +12,18 @@ import { LanguageFectherService } from '../language-fecther.service';
 })
 export class PortfolioComponent implements OnInit {
 
-  langs: Language[];
+  id: number;
+  activeUser: user;
+  view: string;
+  skills: skill[];
 
-  constructor(private fetcher: LanguageFectherService) { }
+  constructor(private route: ActivatedRoute, private fetcher: LanguageFectherService, private userFetcher: UserFetcherService) { }
 
   ngOnInit(): void {
-    this.langs = this.fetcher.getLanguages();
+  this.id = +this.route.snapshot.paramMap.get('id');
+  this.activeUser = this.userFetcher.getUser(this.id);
+  this.skills = this.activeUser.skills;
+  this.view = this.route.snapshot.paramMap.get('view');
   }
 
 }

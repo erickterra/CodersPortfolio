@@ -8,9 +8,11 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'profile', redirectTo: '/profile/view', pathMatch: 'full' },
-  { path: 'profile/:view', component: ProfileComponent},
-  { path: 'portfolio', component: PortfolioComponent}
+  { path: 'profile/:id', redirectTo: '/profile/:id/view', pathMatch: 'full' },
+  { path: 'profile/:id/:view', component: ProfileComponent},
+  { path: 'portfolio/:id', redirectTo: '/portfolio/:id/view', pathMatch: 'full' },
+  { path: 'portfolio/:id/:view', component: PortfolioComponent},
+  { path: '', component: PortfolioComponent}
 ];
 
 @NgModule({

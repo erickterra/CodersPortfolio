@@ -1,3 +1,5 @@
+import { skill } from './skills';
+
 export interface user
 {
     id: number;
@@ -6,4 +8,5 @@ export interface user
     phone: string;
     lpTitle: string;
     lpText: string;
+    skills: skill[];
 }

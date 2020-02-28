@@ -1,12 +1,11 @@
+<h1>{{activeUser.name}}'s CodeFolio</h1>
 <div class="folder half">
     <div class="header">Languages</div>
-    <div class="card" *ngFor = "let lang of langs">
-        <div class="language"><img src= {{lang.iconLocation}}> {{lang.name}}</div>
+    <div class="card" *ngFor="let skill of skills">
+        <div class="language"><img src={{skill.language.iconLocation}}> {{skill.language.name}} Level: {{skill.level}}</div>
     </div>
 </div>
 <div class="folder half">
     <div class="header">Projects</div>
     <div class="card"></div>
-   
-
 </div>

@@ -11,12 +11,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
+  id: number;
   activeUser: user;
   view: string;
-  constructor(private userFetcher: UserFetcherService, private route: ActivatedRoute,) { }
+  constructor(private userFetcher: UserFetcherService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.activeUser = this.userFetcher.getUser(0);
+    this.id = +this.route.snapshot.paramMap.get('id');
+    this.activeUser = this.userFetcher.getUser(this.id);
     this.view = this.route.snapshot.paramMap.get('view');
   }
 
