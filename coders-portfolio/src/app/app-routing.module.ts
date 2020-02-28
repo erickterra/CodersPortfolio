@@ -8,7 +8,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'profile', component: ProfileComponent},
+  { path: 'profile', redirectTo: '/profile/view', pathMatch: 'full' },
+  { path: 'profile/:view', component: ProfileComponent},
   { path: 'portfolio', component: PortfolioComponent}
 ];
 

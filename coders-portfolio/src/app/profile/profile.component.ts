@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import { user } from '../user';
 import {UserFetcherService} from '../user-fetcher.service'
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -11,10 +12,17 @@ import {UserFetcherService} from '../user-fetcher.service'
 export class ProfileComponent implements OnInit {
 
   activeUser: user;
-  constructor(private userFetcher: UserFetcherService) { }
+  view: string;
+  constructor(private userFetcher: UserFetcherService, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
     this.activeUser = this.userFetcher.getUser(0);
+    this.view = this.route.snapshot.paramMap.get('view');
+  }
+
+  save()
+  {
+
   }
 
 }

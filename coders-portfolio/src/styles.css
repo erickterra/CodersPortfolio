@@ -41,8 +41,8 @@ html {
     float: inline-start;
     background-color: #2e0c55;
     color: #eee;
-    padding: 25px;
-    padding-left: 25px;
+    padding: 20px;
+    padding-left: 20px;
     font-size: large;
     text-align: left;
     margin: 5px;
@@ -60,19 +60,49 @@ html {
 
 *.textfield
 {
+  text-align: left;
   height: fit-content;
   background-color: #eee;
   color: black;
 }
 *.textfield.title
 {
+  padding-top: 1%;
+  padding-bottom: 2%;
+  text-align: center;
   color: black;
   font-style: bold;
-  font-size: 20px;
+  font-size: 25px;
 }
 *.textfield.text
 {
   color: black;
   font-style: normal;
   font-size: 15px;
+  white-space: pre-wrap;
 }
+
+*.ng-valid.text
+{
+  text-align: left;
+  width: 98%;
+  height: 100px;
+  color: black;
+  font-style: normal;
+  font-size: 15px;
+  word-wrap: normal;
+}
+
+*.ng-valid.title
+{
+  text-align: center;
+  width: 98%;
+  height: 25px;
+  color: black;
+  font-style: normal;
+  font-size: 20px;
+  word-wrap: normal;
+  overflow-y: scroll;
+}
+
+

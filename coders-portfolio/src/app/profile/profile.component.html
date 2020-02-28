@@ -1,5 +1,11 @@
 <h1>{{activeUser.name}}'s Profile</h1>
 
+<div class="folder quarter" *ngIf='view == "edit"'>
+    <div class="header">User Data</div>
+    <div class="card"><input [(ngModel)] = "activeUser.name"></div>
+    <div class="card"><input type ="email" [(ngModel)] = "activeUser.email"></div>
+    <div class="card"><input [(ngModel)] = "activeUser.phone"></div>
+</div>
 <div class="folder quarter">
     <div class="header">User Data</div>
     <div class="card">{{activeUser.name}}</div>
@@ -11,16 +17,19 @@
     <div class="header">Other Links</div>
 </div>
 
-<div class="folder full">
+<div class="folder full" *ngIf='view == "edit"'>
     <div class="header">Presentation Letter</div>
-    <div class="card"> 
+           <input class = "title" [(ngModel)] = "activeUser.lpTitle">
+           <br>
+            <textarea class = "text" [(ngModel)] = "activeUser.lpText">
+            </textarea>
+            <button (click)="save()" style="text-align: right;">Save</button>
+</div>
+
+<div class="folder full">
+    <div class="header" *ngIf='view == "edit"'>Result</div>
         <div class="textfield">
-            <div class="textfield title"> Letter of  Pesentation <br></div>
-            <div class="textfield text">
-                <br> Hello, there!
-                <br> You can use this component to tell everyone one a little about yourself!
-            </div>
-            
-        </div>
+            <div class="textfield title">{{activeUser.lpTitle}}</div>
+            <div class="textfield text">{{activeUser.lpText}}</div>
     </div>
 </div>
