@@ -1,6 +1,6 @@
 <h1>{{activeUser.name}}'s CodeFolio</h1>
 <div class="folder half">
-    <div class="header">Languages</div>
+    <div class="header">Known Languages</div>
     <div class="card" *ngFor="let skill of skills">
         <div class="language"><img src={{skill.language.iconLocation}}> {{skill.language.name}} Level: {{skill.level}}
         </div>
@@ -8,13 +8,16 @@
 </div>
 <div class="folder half">
     <div class="header">Projects</div>
-    <div class="card" *ngFor="let project of projects">
-        <div class="Project">
-            <div class="Name">{{project.name}}</div>
-            <div class="Desc">{{project.description}}</div>
-            <div class="card" *ngFor="let lang of project.languages">
-                <div class="Language"><img src={{lang.iconLocation}}> {{lang.name}}</div>
+    <div class="card interactive" *ngFor="let project of projects">
+        <div class="project"> <a href="{{project.link}}" >
+            <div class="name">{{project.name}}</div>
+            <br>
+            <div class="desc">{{project.description}}</div>
+            <br>
+            <div *ngFor="let lang of project.languages">
+                <div class="language"><img src={{lang.iconLocation}}> {{lang.name}}</div>
             </div>
+        </a>
         </div>
     </div>
 </div>

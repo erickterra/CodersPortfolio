@@ -30,4 +30,9 @@ export class PortfolioComponent implements OnInit {
   this.view = this.route.snapshot.paramMap.get('view');
   }
 
+  redirect(link:string)
+  {
+    
+  }
+
 }

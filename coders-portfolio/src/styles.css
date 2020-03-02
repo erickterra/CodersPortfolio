@@ -46,6 +46,7 @@ html {
     font-size: large;
     text-align: left;
     margin: 5px;
+    size: 98%;
 }
 *.card.interactive
 {
@@ -57,6 +58,19 @@ html {
     background-color: #eee;
     color: #2e0c55;
 }
+
+*.card.button
+{
+  background-color: #eee;
+  color: #2e0c55;
+}
+
+*.card.button:hover
+{
+  background-color: #2e0c55;
+  color: #eee;
+}
+
 
 *.textfield
 {
