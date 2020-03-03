@@ -7,3 +7,4 @@ export const languageList: Language[] =
     {name: "Angular", iconLocation: "assets/img/angular.png"},
     {name: "Unity", iconLocation: "assets/img/unity.png"},
 ]
+//language array, for testing

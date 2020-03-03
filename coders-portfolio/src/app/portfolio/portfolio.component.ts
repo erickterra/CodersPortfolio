@@ -23,11 +23,11 @@ export class PortfolioComponent implements OnInit {
   constructor(private route: ActivatedRoute, private projFetcher: ProjectFetcherService, private fetcher: LanguageFectherService, private userFetcher: UserFetcherService) { }
 
   ngOnInit(): void {
-  this.id = +this.route.snapshot.paramMap.get('id');
-  this.activeUser = this.userFetcher.getUser(this.id);
-  this.skills = this.activeUser.skills;
-  this.projects = this.projFetcher.getProjects();
-  this.view = this.route.snapshot.paramMap.get('view');
+  this.id = +this.route.snapshot.paramMap.get('id'); //gets id via url
+  this.activeUser = this.userFetcher.getUser(this.id); //sets the active user to url's id
+  this.skills = this.activeUser.skills; // gets skills from user
+  this.projects = this.projFetcher.getProjects(); //gets project by now, projects are universal, later will be individual, by user
+  this.view = this.route.snapshot.paramMap.get('view'); // gets if url its a view (public) or edit (futurely acessed by authentication)
   }
 
   redirect(link:string)

@@ -1,6 +1,6 @@
 import { skill } from './skills';
 
-export interface user
+export interface user //user class, holds user profile structures
 {
     id: number;
     name: string;
@@ -8,5 +8,5 @@ export interface user
     phone: string;
     lpTitle: string;
     lpText: string;
-    skills: skill[];
+    skills: skill[];  // skill is a struct class. holds a language and a level of knowledge
 }

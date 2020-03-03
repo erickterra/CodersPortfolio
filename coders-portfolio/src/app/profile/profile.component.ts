@@ -17,9 +17,9 @@ export class ProfileComponent implements OnInit {
   constructor(private userFetcher: UserFetcherService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.id = +this.route.snapshot.paramMap.get('id');
-    this.activeUser = this.userFetcher.getUser(this.id);
-    this.view = this.route.snapshot.paramMap.get('view');
+    this.id = +this.route.snapshot.paramMap.get('id'); //gets the id via url
+    this.activeUser = this.userFetcher.getUser(this.id); //gets user by id from url
+    this.view = this.route.snapshot.paramMap.get('view'); //view or edit mode
   }
 
   save()
